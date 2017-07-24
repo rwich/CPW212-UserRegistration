@@ -10,20 +10,14 @@ using System.Windows.Forms;
 
 namespace CPW212_UserRegistration
 {
-    public partial class frmUserRegistration : Form
+    public partial class EditUser : Form
     {
-        public frmUserRegistration()
+        public EditUser()
         {
             InitializeComponent();
         }
 
-        // Accidental click
         private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnRegister_Click(object sender, EventArgs e)
         {
 
         }
