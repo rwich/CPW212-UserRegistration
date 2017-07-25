@@ -89,5 +89,15 @@ namespace CPW212_UserRegistration
         {
             return new SqlConnection("Data Source=(localdb)\\ProjectsV13;Initial Catalog=UserRegistrationDB;Integrated Security=True;");
         }
+
+        public static void EditUser()
+        {
+            throw new NotImplementedException();
+        }
+
+        public static void DeleteUser()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
