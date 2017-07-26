@@ -1,6 +1,6 @@
 ﻿namespace CPW212_UserRegistration
 {
-    partial class DeleteUser
+    partial class frmDeleteUser
     {
         /// <summary>
         /// Required designer variable.
@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboDeleteUser = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnDeleteUser = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // cboDeleteUser
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(38, 49);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(209, 21);
-            this.comboBox1.TabIndex = 0;
+            this.cboDeleteUser.FormattingEnabled = true;
+            this.cboDeleteUser.Location = new System.Drawing.Point(38, 49);
+            this.cboDeleteUser.Name = "cboDeleteUser";
+            this.cboDeleteUser.Size = new System.Drawing.Size(209, 21);
+            this.cboDeleteUser.TabIndex = 0;
             // 
             // label1
             // 
@@ -50,25 +50,25 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Select a User:";
             // 
-            // button1
+            // btnDeleteUser
             // 
-            this.button1.Location = new System.Drawing.Point(83, 109);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 44);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Delete User";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnDeleteUser.Location = new System.Drawing.Point(83, 109);
+            this.btnDeleteUser.Name = "btnDeleteUser";
+            this.btnDeleteUser.Size = new System.Drawing.Size(118, 44);
+            this.btnDeleteUser.TabIndex = 2;
+            this.btnDeleteUser.Text = "Delete User";
+            this.btnDeleteUser.UseVisualStyleBackColor = true;
             // 
-            // DeleteUser
+            // frmDeleteUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 177);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnDeleteUser);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
-            this.Name = "DeleteUser";
-            this.Text = "DeleteUser";
+            this.Controls.Add(this.cboDeleteUser);
+            this.Name = "frmDeleteUser";
+            this.Text = "Delete User";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -76,8 +76,8 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboDeleteUser;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDeleteUser;
     }
 }

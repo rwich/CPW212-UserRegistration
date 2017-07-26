@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CPW212_UserRegistration
 {
-    public partial class EditUser : Form
+    public partial class frmEditUser : Form
     {
-        public EditUser()
+        public frmEditUser()
         {
             InitializeComponent();
         }

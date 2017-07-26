@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CPW212_UserRegistration
 {
-    public partial class DeleteUser : Form
+    public partial class frmDeleteUser : Form
     {
-        public DeleteUser()
+        public frmDeleteUser()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace CPW212_UserRegistration
 {
-    partial class EditUser
+    partial class frmEditUser
     {
         /// <summary>
         /// Required designer variable.
@@ -132,7 +132,7 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Select User";
             // 
-            // EditUser
+            // frmEditUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -148,8 +148,8 @@
             this.Controls.Add(this.txtEditEmail);
             this.Controls.Add(this.txtEditPassword);
             this.Controls.Add(this.txtEditUsername);
-            this.Name = "EditUser";
-            this.Text = "EditUser";
+            this.Name = "frmEditUser";
+            this.Text = "Edit User";
             this.ResumeLayout(false);
             this.PerformLayout();
 

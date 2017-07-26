@@ -95,9 +95,33 @@ namespace CPW212_UserRegistration
             throw new NotImplementedException();
         }
 
-        public static void DeleteUser()
+        public static void DeleteUser(User u)
         {
-            throw new NotImplementedException();
+            SqlConnection con = GetConnection();
+
+            SqlCommand deleteUser = new SqlCommand();
+            deleteUser.Connection = con;
+            deleteUser.CommandText = @"DELETE FROM Users
+                                       WHERE Username = @username";
+            deleteUser.Parameters.AddWithValue("@username", u.Username);
+
+            try
+            {
+                con.Open();
+                int success = deleteUser.ExecuteNonQuery();
+                if (success > 0)
+                {
+                    System.Windows.Forms.MessageBox.Show("User deleted");
+                }
+            }
+            catch (Exception)
+            {
+                System.Windows.Forms.MessageBox.Show("User could not be deleted at this time");
+            }
+            finally
+            {
+                con.Dispose();
+            }
         }
     }
 }
