@@ -90,15 +90,58 @@ namespace CPW212_UserRegistration
             return new SqlConnection("Data Source=(localdb)\\ProjectsV13;Initial Catalog=UserRegistrationDB;Integrated Security=True;");
         }
 
-        public static void EditUser()
-        {
-            throw new NotImplementedException();
-        }
-
-        public static void DeleteUser(User u)
+        /// <summary>
+        /// EditUser() method updates a row in the database for a particular user
+        /// </summary>
+        /// <param name="oldUser"></param>
+        /// <param name="updatedUser"></param>
+        /// <returns>boolean value so appropriate success/failure message can be shown</returns>
+        public static bool EditUser(User oldUser, User updatedUser)
         {
             SqlConnection con = GetConnection();
+            SqlCommand editUser = new SqlCommand();
+            editUser.Connection = con;
+            editUser.CommandText = @"UPDATE Users
+                                    SET Username = @username
+                                        Password = @password
+                                        Email = @email
+                                        DateOfBirth = @dob
+                                    WHERE Username = @oldusername";
+            editUser.Parameters.AddWithValue("@username", updatedUser.Username);
+            editUser.Parameters.AddWithValue("@password", updatedUser.Password);
+            editUser.Parameters.AddWithValue("@email", updatedUser.Email);
+            editUser.Parameters.AddWithValue("@dob", updatedUser.DateOfBirth);
+            editUser.Parameters.AddWithValue("@oldusername", oldUser.Username);
 
+            try
+            {
+                con.Open();
+                byte success = (byte)editUser.ExecuteNonQuery();
+                if (success > 0)
+                {
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                con.Dispose();
+            }
+        }
+
+        /// <summary>
+        /// DeleteUser() method deletes a user from the database
+        /// </summary>
+        /// <param name="u"></param>
+        /// <returns>boolean value so appropriate success/failure message can be shown</returns>
+        public static bool DeleteUser(User u)
+        {
+            SqlConnection con = GetConnection();
             SqlCommand deleteUser = new SqlCommand();
             deleteUser.Connection = con;
             deleteUser.CommandText = @"DELETE FROM Users
@@ -108,15 +151,16 @@ namespace CPW212_UserRegistration
             try
             {
                 con.Open();
-                int success = deleteUser.ExecuteNonQuery();
+                byte success = (byte)deleteUser.ExecuteNonQuery();
                 if (success > 0)
                 {
-                    System.Windows.Forms.MessageBox.Show("User deleted");
+                    return true;
                 }
+                return false;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show("User could not be deleted at this time");
+                throw ex;
             }
             finally
             {
