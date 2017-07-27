@@ -37,7 +37,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboUsers = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -77,7 +77,6 @@
             this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "Username:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -114,14 +113,16 @@
             this.btnUpdate.TabIndex = 8;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // comboBox1
+            // cboUsers
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(104, 13);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(201, 21);
-            this.comboBox1.TabIndex = 9;
+            this.cboUsers.FormattingEnabled = true;
+            this.cboUsers.Location = new System.Drawing.Point(104, 13);
+            this.cboUsers.Name = "cboUsers";
+            this.cboUsers.Size = new System.Drawing.Size(201, 21);
+            this.cboUsers.TabIndex = 9;
+            this.cboUsers.SelectedIndexChanged += new System.EventHandler(this.cboUsers_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -138,7 +139,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(315, 248);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cboUsers);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -150,6 +151,7 @@
             this.Controls.Add(this.txtEditUsername);
             this.Name = "frmEditUser";
             this.Text = "Edit User";
+            this.Load += new System.EventHandler(this.frmEditUser_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,7 +168,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboUsers;
         private System.Windows.Forms.Label label5;
     }
 }

@@ -127,6 +127,7 @@
             this.btnEditUser.TabIndex = 10;
             this.btnEditUser.Text = "Edit User";
             this.btnEditUser.UseVisualStyleBackColor = true;
+            this.btnEditUser.Click += new System.EventHandler(this.btnEditUser_Click);
             // 
             // btnDeleteUser
             // 
@@ -136,6 +137,7 @@
             this.btnDeleteUser.TabIndex = 13;
             this.btnDeleteUser.Text = "Delete User";
             this.btnDeleteUser.UseVisualStyleBackColor = true;
+            this.btnDeleteUser.Click += new System.EventHandler(this.btnDeleteUser_Click);
             // 
             // frmUserRegistration
             // 

@@ -58,6 +58,7 @@
             this.btnDeleteUser.TabIndex = 2;
             this.btnDeleteUser.Text = "Delete User";
             this.btnDeleteUser.UseVisualStyleBackColor = true;
+            this.btnDeleteUser.Click += new System.EventHandler(this.btnDeleteUser_Click);
             // 
             // frmDeleteUser
             // 
@@ -69,6 +70,7 @@
             this.Controls.Add(this.cboDeleteUser);
             this.Name = "frmDeleteUser";
             this.Text = "Delete User";
+            this.Load += new System.EventHandler(this.frmDeleteUser_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

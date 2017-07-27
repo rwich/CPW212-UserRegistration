@@ -27,5 +27,17 @@ namespace CPW212_UserRegistration
         {
 
         }
+
+        private void btnEditUser_Click(object sender, EventArgs e)
+        {
+            frmEditUser editUserForm = new frmEditUser();
+            editUserForm.ShowDialog();
+        }
+
+        private void btnDeleteUser_Click(object sender, EventArgs e)
+        {
+            frmDeleteUser deleteUserForm = new frmDeleteUser();
+            deleteUserForm.ShowDialog();
+        }
     }
 }
