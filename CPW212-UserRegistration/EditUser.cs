@@ -20,7 +20,7 @@ namespace CPW212_UserRegistration
 
         private void frmEditUser_Load(object sender, EventArgs e)
         {
-            //PopulateUserList();
+            PopulateUserList();
         }
 
         /// <summary>

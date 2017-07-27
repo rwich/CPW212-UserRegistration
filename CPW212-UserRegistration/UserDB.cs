@@ -87,7 +87,7 @@ namespace CPW212_UserRegistration
         /// <returns>Returns connection to UserRegistration database</returns>
         public static SqlConnection GetConnection()
         {
-            return new SqlConnection("Data Source=(localdb)\\ProjectsV13;Initial Catalog=UserRegistrationDB;Integrated Security=True;");
+            return new SqlConnection("Data Source=(localdb)\\ProjectsV13;Initial Catalog=UserRegistration;Integrated Security=True;");
         }
 
         /// <summary>
@@ -102,9 +102,9 @@ namespace CPW212_UserRegistration
             SqlCommand editUser = new SqlCommand();
             editUser.Connection = con;
             editUser.CommandText = @"UPDATE Users
-                                    SET Username = @username
-                                        Password = @password
-                                        Email = @email
+                                    SET Username = @username,
+                                        Password = @password,
+                                        Email = @email,
                                         DateOfBirth = @dob
                                     WHERE Username = @oldusername";
             editUser.Parameters.AddWithValue("@username", updatedUser.Username);
