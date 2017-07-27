@@ -69,6 +69,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.cs" />
+    <Compile Include="UserFormHelper.cs" />
     <EmbeddedResource Include="DeleteUser.resx">
       <DependentUpon>DeleteUser.cs</DependentUpon>
     </EmbeddedResource>

@@ -20,30 +20,7 @@ namespace CPW212_UserRegistration
 
         private void frmDeleteUser_Load(object sender, EventArgs e)
         {
-            //PopulateUserList();
-        }
-
-        /// <summary>
-        /// PopulateUserList() method gets all users from database
-        /// and displays usernames in combobox
-        /// </summary>
-        private void PopulateUserList()
-        {
-            cboDeleteUser.Items.Clear();
-
-            try
-            {
-                List<User> users = UserDB.GetAllUsers();
-                foreach (User u in users)
-                {
-                    cboDeleteUser.Items.Add(u);
-                }
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show("Unable to load user list. Try again later.");
-                Application.Exit();
-            }
+            UserFormHelper.PopulateUserList(cboDeleteUser);
         }
 
         /// <summary>
@@ -72,7 +49,7 @@ namespace CPW212_UserRegistration
                 if ( UserDB.DeleteUser(user) )
                 {
                     MessageBox.Show("User account deleted successfully.");
-                    PopulateUserList();
+                    UserFormHelper.PopulateUserList(cboDeleteUser);
                 }
                 else
                 {

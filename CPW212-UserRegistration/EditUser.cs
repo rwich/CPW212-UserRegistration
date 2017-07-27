@@ -20,30 +20,7 @@ namespace CPW212_UserRegistration
 
         private void frmEditUser_Load(object sender, EventArgs e)
         {
-            //PopulateUserList();
-        }
-
-        /// <summary>
-        /// PopulateUserList() method gets all users from database
-        /// and displays usernames in combobox
-        /// </summary>
-        private void PopulateUserList()
-        {
-            cboUsers.Items.Clear();
-
-            try
-            {
-                List<User> users = UserDB.GetAllUsers();
-                foreach(User u in users)
-                {
-                    cboUsers.Items.Add(u);
-                }
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show("Unable to load user list. Try again later.");
-                Application.Exit();
-            }
+            UserFormHelper.PopulateUserList(cboUsers);
         }
 
         /// <summary>
@@ -90,7 +67,7 @@ namespace CPW212_UserRegistration
             if ( UserDB.EditUser(selectedUser, updatedUser) )
             {
                 MessageBox.Show("User account updated successfully.");
-                PopulateUserList();
+                UserFormHelper.PopulateUserList(cboUsers);
             }
             else
             {
