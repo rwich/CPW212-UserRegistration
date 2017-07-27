@@ -17,15 +17,15 @@ namespace CPW212_UserRegistration
             InitializeComponent();
         }
 
-        // Accidental click
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnRegister_Click(object sender, EventArgs e)
         {
+            User u = new User();
+            u.Username = txtUsername.Text;
+            u.Password = txtPassword.Text;
+            u.Email = txtEmail.Text;
+            u.DateOfBirth = dtpDOB.Value;
 
+            UserDB.AddUser(u);
         }
 
         private void btnEditUser_Click(object sender, EventArgs e)
@@ -38,6 +38,11 @@ namespace CPW212_UserRegistration
         {
             frmDeleteUser deleteUserForm = new frmDeleteUser();
             deleteUserForm.ShowDialog();
+        }
+
+        private void frmUserRegistration_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

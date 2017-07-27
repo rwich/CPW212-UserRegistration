@@ -90,7 +90,6 @@
             this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 5;
             this.label1.Text = "Username:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -158,6 +157,7 @@
             this.Controls.Add(this.txtUsername);
             this.Name = "frmUserRegistration";
             this.Text = "User Registration";
+            this.Load += new System.EventHandler(this.frmUserRegistration_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
