@@ -56,7 +56,7 @@ namespace CPW212_UserRegistration
                     MessageBox.Show("Unable to delete user at this time.");
                 }
             }
-
+            cboDeleteUser.Text = "";
         }
     }
 }

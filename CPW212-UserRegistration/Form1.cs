@@ -17,6 +17,12 @@ namespace CPW212_UserRegistration
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Constructs user object from form input and sends it to AddUser()
+        /// After success or failure, the form is reset
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRegister_Click(object sender, EventArgs e)
         {
             User u = new User();
@@ -25,15 +31,36 @@ namespace CPW212_UserRegistration
             u.Email = txtEmail.Text;
             u.DateOfBirth = dtpDOB.Value;
 
-            UserDB.AddUser(u);
+            if (UserDB.AddUser(u))
+            {
+                MessageBox.Show("User successfully added");
+            }
+            else
+            {
+                MessageBox.Show("Could not add user at this time");
+            }
+            txtUsername.Text = "";
+            txtPassword.Text = "";
+            txtEmail.Text = "";
+            dtpDOB.Value = new DateTime(1960, 1, 1);
         }
 
+        /// <summary>
+        /// Opens EditUser form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEditUser_Click(object sender, EventArgs e)
         {
             frmEditUser editUserForm = new frmEditUser();
             editUserForm.ShowDialog();
         }
 
+        /// <summary>
+        /// Opens DeleteUser form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDeleteUser_Click(object sender, EventArgs e)
         {
             frmDeleteUser deleteUserForm = new frmDeleteUser();

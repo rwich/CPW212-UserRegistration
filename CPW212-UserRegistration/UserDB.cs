@@ -14,7 +14,7 @@ namespace CPW212_UserRegistration
         /// AddUser() method adds user to database
         /// </summary>
         /// <param name="user">User to be added</param>
-        public static void AddUser(User user)
+        public static bool AddUser(User user)
         {
             SqlConnection con = GetConnection();
 
@@ -32,10 +32,11 @@ namespace CPW212_UserRegistration
             {
                 con.Open();
                 int rowsAffected = addUserCmd.ExecuteNonQuery();
+                return true;
             }
             catch (SqlException ex)
             {
-
+                return false;
                 throw ex;
             }
             finally

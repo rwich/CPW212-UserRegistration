@@ -68,6 +68,7 @@
             this.dtpEditDOB.Name = "dtpEditDOB";
             this.dtpEditDOB.Size = new System.Drawing.Size(200, 20);
             this.dtpEditDOB.TabIndex = 3;
+            this.dtpEditDOB.Value = new System.DateTime(1960, 1, 1, 0, 0, 0, 0);
             // 
             // label1
             // 

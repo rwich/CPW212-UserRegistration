@@ -73,6 +73,11 @@ namespace CPW212_UserRegistration
             {
                 MessageBox.Show("Unable to update user at this time.");
             }
+            cboUsers.Text = "";
+            txtEditUsername.Text = "";
+            txtEditPassword.Text = "";
+            txtEditEmail.Text = "";
+            dtpEditDOB.Value = new DateTime(1960, 1, 1);
         }
     }
 }

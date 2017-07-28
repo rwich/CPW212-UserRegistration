@@ -80,7 +80,7 @@
             this.dtpDOB.Name = "dtpDOB";
             this.dtpDOB.Size = new System.Drawing.Size(200, 20);
             this.dtpDOB.TabIndex = 4;
-            this.dtpDOB.Value = new System.DateTime(2017, 7, 19, 0, 0, 0, 0);
+            this.dtpDOB.Value = new System.DateTime(1960, 1, 1, 0, 0, 0, 0);
             // 
             // label1
             // 
